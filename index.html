@@ -16,16 +16,73 @@
       <section id="price-section">
         <div id="price-box">
           <h3>Pizza Prices</h3>
+          <div id="price-grid">
+            <div></div>
+            <span class="price-label">Size</span>
+            <span class="price-label">Cheese Pizza</span>
+            <span class="price-label">Basic Topping</span>
+            <span class="price-label">Premium Topping</span>
+            <div></div>
+            <span class="price-size">Small (10 inch)</span>
+            <span>$9.00</span>
+            <span>$0.75</span>
+            <span>$1.15</span>
+            <div></div>
+            <span class="price-size">Medium (12 inch)</span>
+            <span>$13.00</span>
+            <span>$1.05</span>
+            <span>$1.60</span>
+            <div></div>
+            <span class="price-size">Large (14 inch)</span>
+            <span>$18.00</span>
+            <span>$1.45</span>
+            <span>$2.20</span>
+          </div>
         </div>
       </section>
       <section id="order-section">
         <div id="order-box">
           <h3>Order a Pizza</h3>
+          <form id="order-form">
+            <div id="order-grid">
+              <div></div>
+              <label for="pizza-size" class="order-label">Choose a Size</label>
+              <select id="pizza-size">
+                <option value="Small">Small</option>
+                <option value="Medium">Small</option>
+                <option value="Large">Small</option>
+              </select>
+              <span id="base-cost" class="cost">$9.00</span>
+
+              <div></div>
+              <label class="order-label">Choose Toppings</label>
+              <label class="order-label topping-label">Basic Toppings</label>
+              <span id="basic-toppings"></span>
+
+              <div></div>
+              <span></span>
+              <span class="topping"><input type="checkbox" name="topping" value="Olives">Olives</span>
+              <span class="cost">$0.75</span>
+
+              <div></div>
+              <label class="order-label"></label>
+              <label class="order-label topping-label">Premium Toppings</label>
+              <span id="premium-toppings"></span>
+
+              <div></div>
+              <span></span>
+              <span class="topping"><input type="checkbox" name="topping" value="Pepperoni">Pepperoni</span>
+              <span class="cost">$1.15</span>
+
+            </div>
+            <input type="submit" value="Place Order">
+          </form>
         </div>
       </section>
       <section id="summary-section">
         <div id="summary-box">
           <h3>Order Summary</h3>
+          <p id="order-summary"></p>
         </div>
       </section>
     </main>

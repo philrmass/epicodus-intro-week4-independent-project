@@ -53,12 +53,12 @@ The following expectations were used to hand-test the project
 
  **Ui functionality**
 - [ ] Add html layout with static content
-- [ ] Add dynamic price content
 - [ ] Add dynamic order content
 - [ ] Connect order inputs to business logic
+- [ ] Connect Order button to display order summary
 - [ ] Display total cost
 - [ ] Display base and topping costs
-- [ ] Connect Order button to display order summary
+- [ ] Add dynamic price content
 
 
 ## Objectives
