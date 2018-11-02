@@ -12,6 +12,14 @@ Pizza.prototype.setSize = function(size) {
   this.size = size;
 }
 
+Pizza.prototype.getBasicToppings = function() {
+  return ["Mushrooms", "Olives", "Pepperonchini", "Pineapple", "Roasted Red Pepper"];
+}
+
+Pizza.prototype.getPremiumToppings = function() {
+  return ["Bacon", "Chicken", "Pepperoni", "Sausage"];
+}
+
 Pizza.prototype.addTopping = function(topping) {
   if(!this.toppings.includes(topping)) {
     this.toppings.push(topping);
@@ -84,3 +92,6 @@ displayPizzaText(pizza);
 
 pizza.addTopping("Pepperoncini");
 displayPizzaText(pizza);
+
+console.log(pizza.getBasicToppings());
+console.log(pizza.getPremiumToppings());

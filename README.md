@@ -6,7 +6,7 @@
 
 ## Description
 
-_This website allows users to . You can view the deployed page [here](https://philrmass.github.io/order-pizza)._
+_This website allows users to order a pizza with size and topping options. You can change the size and add or remove toppings. It calculates the cost of the pizza, and updates the cost to reflect any changes. When you click the order button, it gives a summary of the pizza. You can view the deployed page [here](https://philrmass.github.io/order-pizza)._
 
 ## Setup and Installation
 
@@ -37,14 +37,11 @@ Basic functionality
  Additional functionality
 - [x] add ability to remove toppings
  * removeTopping("Olives") removes "Olives" from toppings array if present
+- [x] add two topping categories and create arrays of names as methods
+- [ ] add individual topping cost method
+- [ ] improve toppings cost to include topping category
+- [ ] improve toppings cost to account for size of pizza
 - [ ]
- *
-- [ ]
- *
-- [ ]
- *
-- [ ] 
- *
 
 
 ## Objectives
