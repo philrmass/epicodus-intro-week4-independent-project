@@ -28,10 +28,10 @@ Basic functionality
  * new Pizza(sizeInches) -> {size: sizeInches, toppings: []}
 - [x] add Pizza prototype method to add a topping
  * pizza.addTopping("pepperoni") -> pizza.toppings = ["pepperoni"]
-- [ ] add Pizza prototype method to calculate pizza cost
- * pizza.calculateCost() === 15.00
-- [ ] include size in calculating pizza cost
- * 10 inch = $15.00, 12 inch == $20.00
+- [x] add Pizza prototype method to calculate pizza cost
+ * pizza.calculateCost() === 9
+- [x] include size in calculating pizza cost
+ * size : 12 -> pizza.calculateCost() === 13
 - [ ] include toppings in calculating pizza cost
  * 2 toppings = $4.00 extra
 
