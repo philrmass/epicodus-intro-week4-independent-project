@@ -32,7 +32,7 @@ Basic functionality
  * pizza.calculateCost() === 9
 - [x] include size in calculating pizza cost
  * size : 12 -> pizza.calculateCost() === 13
-- [ ] include toppings in calculating pizza cost
+- [x] include toppings in calculating pizza cost
  * 2 toppings = $4.00 extra
 
 

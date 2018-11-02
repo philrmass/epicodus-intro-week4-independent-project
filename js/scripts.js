@@ -1,7 +1,11 @@
 // Business logic
-function Pizza(sizeInches) {
+function Pizza(sizeInches = 10) {
   this.size = sizeInches;
   this.toppings = [];
+}
+
+Pizza.prototype.getSize = function() {
+  return this.size;
 }
 
 Pizza.prototype.setSize = function(size) {
@@ -21,15 +25,26 @@ Pizza.prototype.calculateBaseCost = function(size) {
   return cost;
 }
 
+Pizza.prototype.calculateToppingsCost = function(toppings) {
+  let cost = 0;
+
+  toppings.forEach(function(topping) {
+    cost += 2;
+  })
+
+  return cost;
+}
+
 Pizza.prototype.calculateCost = function() {
   const baseCost = this.calculateBaseCost(this.size);
+  const toppingsCost = this.calculateToppingsCost(this.toppings);
 
-  return baseCost;
+  return baseCost + toppingsCost;
 }
 
 
 // UI logic
-let pizza = new Pizza(10);
+let pizza = new Pizza();
 pizza.setSize(12);
 pizza.addTopping("pepperoni");
 pizza.addTopping("olives");
