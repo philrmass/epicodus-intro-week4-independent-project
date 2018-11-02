@@ -22,7 +22,7 @@ If you have any issues or questions, please email me at philrmass@gmail.com
 The following expectations were used to hand-test the project
 
 Basic functionality
-- [ ] create Pizza object with size and toppings properties
+- [x] create Pizza object with size and toppings properties
  * new Pizza() -> {size: 0, toppings: []}
 - [ ] set Pizza size from constructor size parameter
  * new Pizza(sizeInches) -> {size: sizeInches, toppings: []}
