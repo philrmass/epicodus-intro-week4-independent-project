@@ -13,7 +13,20 @@ Pizza.prototype.setSize = function(size) {
 }
 
 Pizza.prototype.addTopping = function(topping) {
-  this.toppings.push(topping);
+  if(!this.toppings.includes(topping)) {
+    this.toppings.push(topping);
+    return true;
+  }
+  return false;
+}
+
+Pizza.prototype.removeTopping = function(topping) {
+  let index = this.toppings.indexOf(topping);
+  if(index != -1) {
+    this.toppings.splice(index, 1);
+    return true;
+  }
+  return false;
 }
 
 Pizza.prototype.calculateBaseCost = function(size) {
@@ -44,9 +57,30 @@ Pizza.prototype.calculateCost = function() {
 
 
 // UI logic
+function displayPizzaText(pizza) {
+  let text = "Pizza, " + pizza.size + " in,";
+  if(pizza.toppings.length !== 0) {
+    for(let i = 0; i < pizza.toppings.length; i++) {
+      text += " " + pizza.toppings[i];
+    }
+    text + ",";
+  }
+  text += " $" + pizza.calculateCost();
+  console.log(text);
+}
+
 let pizza = new Pizza();
 pizza.setSize(12);
-pizza.addTopping("pepperoni");
-pizza.addTopping("olives");
-const cost = pizza.calculateCost();
-console.log(pizza, " cost=", cost);
+displayPizzaText(pizza);
+
+pizza.addTopping("Pepperoni");
+pizza.addTopping("Olives");
+pizza.addTopping("Pepperoncini");
+pizza.addTopping("Roasted Red Peppers");
+displayPizzaText(pizza);
+
+pizza.removeTopping("Olives");
+displayPizzaText(pizza);
+
+pizza.addTopping("Pepperoncini");
+displayPizzaText(pizza);

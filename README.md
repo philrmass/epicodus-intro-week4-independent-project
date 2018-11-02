@@ -34,6 +34,17 @@ Basic functionality
  * size : 12 -> pizza.calculateCost() === 13
 - [x] include toppings in calculating pizza cost
  * 2 toppings = $4.00 extra
+ Additional functionality
+- [x] add ability to remove toppings
+ * removeTopping("Olives") removes "Olives" from toppings array if present
+- [ ]
+ *
+- [ ]
+ *
+- [ ]
+ *
+- [ ] 
+ *
 
 
 ## Objectives
