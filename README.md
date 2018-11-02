@@ -10,7 +10,7 @@ _This website allows users to . You can view the deployed page [here](https://ph
 
 ## Setup and Installation
 
-* Clone the project from https://github.com/philrmass/PROJECT.git to a local directory
+* Clone the project from https://github.com/philrmass/order-pizza.git to a local directory
 * Open index.html in a browser
 
 ## Support and Contact Details
@@ -22,8 +22,19 @@ If you have any issues or questions, please email me at philrmass@gmail.com
 The following expectations were used to hand-test the project
 
 Basic functionality
-* 
- - [ ] 
+- [ ] create Pizza object with size and toppings properties
+ * new Pizza() -> {size: 0, toppings: []}
+- [ ] set Pizza size from constructor size parameter
+ * new Pizza(sizeInches) -> {size: sizeInches, toppings: []}
+- [ ] add Pizza prototype method to add a topping
+ * pizza.addTopping("pepperoni") -> pizza.toppings = ["pepperoni"]
+- [ ] add Pizza prototype method to calculate pizza cost
+ * pizza.calculateCost() === 15.00
+- [ ] include size in calculating pizza cost
+ * 10 inch = $15.00, 12 inch == $20.00
+- [ ] include toppings in calculating pizza cost
+ * 2 toppings = $4.00 extra
+
 
 ## Objectives
 
