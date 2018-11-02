@@ -46,13 +46,28 @@ Pizza.prototype.calculateBaseCost = function(size) {
   return cost;
 }
 
+Pizza.prototype.getToppingCost = function(isPremium) {
+  const basicCost = 1.0;
+  const premiumRatio = 1.5;
+
+  if(isPremium) {
+    return premiumRatio * basicCost;
+  } else {
+    return basicCost;
+  }
+}
+
 Pizza.prototype.calculateToppingsCost = function(toppings) {
+  const premiums = this.getPremiumToppings();
+  const basicCost = this.getToppingCost(false);
+  const premiumCost = this.getToppingCost(true);
   let cost = 0;
 
   toppings.forEach(function(topping) {
-    cost += 2;
-  })
+    cost += (premiums.includes(topping) ? premiumCost : basicCost);
+  });
 
+  console.log(toppings, "  $" + cost);
   return cost;
 }
 
@@ -81,8 +96,10 @@ let pizza = new Pizza();
 pizza.setSize(12);
 displayPizzaText(pizza);
 
-pizza.addTopping("Pepperoni");
 pizza.addTopping("Olives");
+displayPizzaText(pizza);
+
+pizza.addTopping("Pepperoni");
 pizza.addTopping("Pepperoncini");
 pizza.addTopping("Roasted Red Peppers");
 displayPizzaText(pizza);
@@ -92,6 +109,3 @@ displayPizzaText(pizza);
 
 pizza.addTopping("Pepperoncini");
 displayPizzaText(pizza);
-
-console.log(pizza.getBasicToppings());
-console.log(pizza.getPremiumToppings());

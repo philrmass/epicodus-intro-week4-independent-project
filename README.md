@@ -21,7 +21,7 @@ If you have any issues or questions, please email me at philrmass@gmail.com
 
 The following expectations were used to hand-test the project
 
-Basic functionality
+**Basic business functionality**
 - [x] create Pizza object with size and toppings properties
  * new Pizza() -> {size: 0, toppings: []}
 - [x] set Pizza size from constructor size parameter
@@ -34,12 +34,13 @@ Basic functionality
  * size : 12 -> pizza.calculateCost() === 13
 - [x] include toppings in calculating pizza cost
  * 2 toppings = $4.00 extra
- Additional functionality
+
+**Additional business functionality**
 - [x] add ability to remove toppings
  * removeTopping("Olives") removes "Olives" from toppings array if present
 - [x] add two topping categories and create arrays of names as methods
-- [ ] add individual topping cost method
-- [ ] improve toppings cost to include topping category
+- [x] add individual topping cost method
+- [x] improve toppings cost to include topping category
 - [ ] improve toppings cost to account for size of pizza
 - [ ]
 
