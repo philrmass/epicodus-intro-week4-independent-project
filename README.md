@@ -46,9 +46,9 @@ The following expectations were used to hand-test the project
  * getToppingCost(true) -> 1.5
 - [x] improve toppings cost to account for size of pizza
  * getToppingCost(12, true) -> 1.6
-- [ ] add method for size names
+- [x] add method for size names
  * getSizeNames() -> ["Small", "Medium", "Large"]
-- [ ] add method for getting size by name
+- [x] add method for getting size by name
  * getSizeByName("Medium") -> 12
 
  **Ui functionality**

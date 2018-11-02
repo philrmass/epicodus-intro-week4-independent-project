@@ -4,12 +4,26 @@ function Pizza(sizeInches = 10) {
   this.toppings = [];
 }
 
-Pizza.prototype.getSize = function() {
-  return this.size;
+Pizza.prototype.getSizeNames = function() {
+  return ["Small", "Medium", "Large"];
+}
+
+Pizza.prototype.getSizeByName = function(name) {
+  if(name === "Large") {
+    return 14;
+  } else if(name === "Medium") {
+    return 12;
+  } else {
+    return 10;
+  }
 }
 
 Pizza.prototype.setSize = function(size) {
   this.size = size;
+}
+
+Pizza.prototype.getSize = function() {
+  return this.size;
 }
 
 Pizza.prototype.getBasicToppings = function() {
@@ -86,7 +100,7 @@ Pizza.prototype.calculateCost = function() {
 
 
 // UI logic
-function displayPizzaText(pizza) {
+function getPizzaSummary(pizza) {
   let text = "Pizza, " + pizza.size + " in,";
   if(pizza.toppings.length !== 0) {
     for(let i = 0; i < pizza.toppings.length; i++) {
@@ -100,18 +114,18 @@ function displayPizzaText(pizza) {
 
 let pizza = new Pizza();
 pizza.setSize(12);
-displayPizzaText(pizza);
+getPizzaSummary(pizza);
 
 pizza.addTopping("Olives");
-displayPizzaText(pizza);
+getPizzaSummary(pizza);
 
 pizza.addTopping("Pepperoni");
 pizza.addTopping("Pepperoncini");
 pizza.addTopping("Roasted Red Peppers");
-displayPizzaText(pizza);
+getPizzaSummary(pizza);
 
 pizza.removeTopping("Olives");
-displayPizzaText(pizza);
+getPizzaSummary(pizza);
 
 pizza.addTopping("Pepperoncini");
-displayPizzaText(pizza);
+getPizzaSummary(pizza);
