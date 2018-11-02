@@ -24,7 +24,7 @@ The following expectations were used to hand-test the project
 Basic functionality
 - [x] create Pizza object with size and toppings properties
  * new Pizza() -> {size: 0, toppings: []}
-- [ ] set Pizza size from constructor size parameter
+- [x] set Pizza size from constructor size parameter
  * new Pizza(sizeInches) -> {size: sizeInches, toppings: []}
 - [ ] add Pizza prototype method to add a topping
  * pizza.addTopping("pepperoni") -> pizza.toppings = ["pepperoni"]
