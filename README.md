@@ -46,7 +46,19 @@ The following expectations were used to hand-test the project
  * getToppingCost(true) -> 1.5
 - [x] improve toppings cost to account for size of pizza
  * getToppingCost(12, true) -> 1.6
-- [ ] 
+- [ ] add method for size names
+ * getSizeNames() -> ["Small", "Medium", "Large"]
+- [ ] add method for getting size by name
+ * getSizeByName("Medium") -> 12
+
+ **Ui functionality**
+- [ ] Add html layout with static content
+- [ ] Add dynamic price content
+- [ ] Add dynamic order content
+- [ ] Connect order inputs to business logic
+- [ ] Display total cost
+- [ ] Display base and topping costs
+- [ ] Connect Order button to display order summary
 
 
 ## Objectives
