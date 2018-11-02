@@ -123,9 +123,27 @@ document.addEventListener("DOMContentLoaded", function() {
   let orderCost = document.getElementById("order-cost");
   let summarySection = document.getElementById("summary-section");
 
-  function updateTopping() {
-    console.log("topping click", this.value);
+
+  function updateTotal() {
+    let cost = pizza.calculateCost();
+    orderCost.innerHTML = "$" + cost.toFixed(2);
   }
+
+  function updateTopping() {
+    if(this.checked) {
+      pizza.addTopping(this.value);
+    } else {
+      pizza.removeTopping(this.value);
+    }
+    updateTotal();
+  }
+
+  orderSize.onchange = function() {
+    let sizeName = this.options[this.selectedIndex].value;
+    let size = pizza.getSizeByName(sizeName);
+    pizza.setSize(size);
+    updateTotal();
+  };
 
   let toppings = document.querySelectorAll(".topping input");
   toppings.forEach(function(topping) {
@@ -139,15 +157,16 @@ document.addEventListener("DOMContentLoaded", function() {
     pizza.setSize(size);
 
     //??? get toppings
-
-    let cost = pizza.calculateCost();
-    orderCost.innerHTML = "$" + cost.toFixed(2);
+    updateTotal();
 
     let summary = getOrderSummary(pizza);
     orderSummary.innerHTML = summary;
     summarySection.style.display = "block";
-  }
+  };
+
+  updateTotal();
 });
+
 /*
 let pizza = new Pizza();
 pizza.setSize(12);
