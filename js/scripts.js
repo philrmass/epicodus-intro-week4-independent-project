@@ -117,10 +117,20 @@ function getOrderSummary(pizza) {
 
 document.addEventListener("DOMContentLoaded", function() {
   let orderForm = document.getElementById("order-form");
+  let orderGrid = document.getElementById("order-grid");
   let orderSize = document.getElementById("order-size");
   let orderSummary = document.getElementById("order-summary");
   let orderCost = document.getElementById("order-cost");
   let summarySection = document.getElementById("summary-section");
+
+  function updateTopping() {
+    console.log("topping click", this.value);
+  }
+
+  let toppings = document.querySelectorAll(".topping input");
+  toppings.forEach(function(topping) {
+    topping.onclick = updateTopping;
+  });
 
   orderForm.onsubmit = function(event) {
     event.preventDefault();
