@@ -101,15 +101,16 @@ Pizza.prototype.calculateCost = function() {
 // UI logic
 let pizza = new Pizza();
 
-function getPizzaSummary(pizza) {
-  let text = "Pizza, " + pizza.size + " in,";
+function getOrderSummary(pizza) {
+  let text = pizza.size + " inch pizza, "
   if(pizza.toppings.length !== 0) {
+    text + "(";
     for(let i = 0; i < pizza.toppings.length; i++) {
       text += " " + pizza.toppings[i];
     }
-    text + ",";
+    text + ") ";
   }
-  text += " $" + pizza.calculateCost();
+  text += "$" + pizza.calculateCost().toFixed(2);
 
   return text;
 }
@@ -118,6 +119,8 @@ document.addEventListener("DOMContentLoaded", function() {
   let orderForm = document.getElementById("order-form");
   let orderSize = document.getElementById("order-size");
   let orderSummary = document.getElementById("order-summary");
+  let orderCost = document.getElementById("order-cost");
+  let summarySection = document.getElementById("summary-section");
 
   orderForm.onsubmit = function(event) {
     event.preventDefault();
@@ -125,30 +128,32 @@ document.addEventListener("DOMContentLoaded", function() {
     let size = pizza.getSizeByName(sizeName);
     pizza.setSize(size);
 
+    //??? get toppings
+
     let cost = pizza.calculateCost();
+    orderCost.innerHTML = "$" + cost.toFixed(2);
 
-    let summary = getPizzaSummary(pizza);
+    let summary = getOrderSummary(pizza);
     orderSummary.innerHTML = summary;
-
-    console.log(summary);
+    summarySection.style.display = "block";
   }
 });
 /*
 let pizza = new Pizza();
 pizza.setSize(12);
-getPizzaSummary(pizza);
+getOrderSummary(pizza);
 
 pizza.addTopping("Olives");
-getPizzaSummary(pizza);
+getOrderSummary(pizza);
 
 pizza.addTopping("Pepperoni");
 pizza.addTopping("Pepperoncini");
 pizza.addTopping("Roasted Red Peppers");
-getPizzaSummary(pizza);
+getOrderSummary(pizza);
 
 pizza.removeTopping("Olives");
-getPizzaSummary(pizza);
+getOrderSummary(pizza);
 
 pizza.addTopping("Pepperoncini");
-getPizzaSummary(pizza);
+getOrderSummary(pizza);
 */

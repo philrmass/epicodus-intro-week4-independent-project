@@ -84,7 +84,7 @@ main h3 {
   color: #686868;
 }
 
-.topping-label {
+.small-label {
   font-size: 0.8em;
 }
 
@@ -99,7 +99,20 @@ main h3 {
   font-size: 0.8em;
 }
 
+.total {
+  padding-top: 1em;
+}
+
+#total-label {
+  text-align: right;
+}
+
 #summary-section {
-  padding: 1em;
-  background-color: #f8f0ff;
+  display: none;
+  margin-top: 0.2em;
+  padding: 0.1em 1em;
+}
+
+#order-summary {
+  margin: 0.5em;
 }
