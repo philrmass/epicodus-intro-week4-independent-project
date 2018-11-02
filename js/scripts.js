@@ -145,10 +145,18 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function updateTopping() {
+    let costNode = this.parentNode.nextElementSibling;
+
     if(this.checked) {
       pizza.addTopping(this.value);
+      if(costNode) {
+        costNode.innerHTML = "BOO!";
+      }
     } else {
       pizza.removeTopping(this.value);
+      if(costNode) {
+        costNode.innerHTML = "";
+      }
     }
     updateTotal();
   }
