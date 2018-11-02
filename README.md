@@ -26,7 +26,7 @@ Basic functionality
  * new Pizza() -> {size: 0, toppings: []}
 - [x] set Pizza size from constructor size parameter
  * new Pizza(sizeInches) -> {size: sizeInches, toppings: []}
-- [ ] add Pizza prototype method to add a topping
+- [x] add Pizza prototype method to add a topping
  * pizza.addTopping("pepperoni") -> pizza.toppings = ["pepperoni"]
 - [ ] add Pizza prototype method to calculate pizza cost
  * pizza.calculateCost() === 15.00
