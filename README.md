@@ -52,26 +52,23 @@ The following expectations were used to hand-test the project
  * getSizeByName("Medium") -> 12
 
  **Ui functionality**
-- [ ] Add html layout with static content
-- [ ] Add dynamic order content
-- [ ] Connect order inputs to business logic
-- [ ] Connect Order button to display order summary
-- [ ] Display total cost
-- [ ] Display base and topping costs
-- [ ] Add dynamic price content
-
+- [x] Add html layout with static content
+- [x] Connect order inputs to business logic
+- [x] Connect Order button to display order summary
+- [x] Display total cost
+- [x] Display base and topping costs
 
 ## Objectives
 
 This project was created as an independent project for Epicodus, Intro to Programming Course, Week 4 and completes the following objectives:
 
-- [ ] Code meets standards from previous weeks.
-- [ ] Constructors and prototypes are used successfully.
-- [ ] Application works as expected.
-- [ ] Plain English specs are included in your README.
-- [ ] Required functionality is in place by the 5:00pm Friday deadline.
-- [ ] Project is in a polished, portfolio-quality state.
-- [ ] Project demonstrates an understanding of this week's concepts. If prompted, you can discuss your code with an instructor using correct terminology.
+- [x] Code meets standards from previous weeks.
+- [x] Constructors and prototypes are used successfully.
+- [x] Application works as expected.
+- [x] Plain English specs are included in your README.
+- [x] Required functionality is in place by the 5:00pm Friday deadline.
+- [x] Project is in a polished, portfolio-quality state.
+- [x] Project demonstrates an understanding of this week's concepts. If prompted, you can discuss your code with an instructor using correct terminology.
 
 ## Legal
 

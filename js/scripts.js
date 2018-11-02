@@ -27,11 +27,11 @@ Pizza.prototype.getSize = function() {
 }
 
 Pizza.prototype.getBasicToppings = function() {
-  return ["Mushrooms", "Olives", "Pepperonchini", "Pineapple", "Roasted Red Pepper"];
+  return ["Mushrooms", "Olives", "Pineapple"];
 }
 
 Pizza.prototype.getPremiumToppings = function() {
-  return ["Bacon", "Chicken", "Pepperoni", "Sausage"];
+  return ["Pepperoni", "Sausage"];
 }
 
 Pizza.prototype.addTopping = function(topping) {
@@ -102,13 +102,16 @@ Pizza.prototype.calculateCost = function() {
 let pizza = new Pizza();
 
 function getOrderSummary(pizza) {
-  let text = pizza.size + " inch pizza, "
+  let text = pizza.size + " inch pizza "
   if(pizza.toppings.length !== 0) {
-    text + "(";
+    text += "("
     for(let i = 0; i < pizza.toppings.length; i++) {
-      text += " " + pizza.toppings[i];
+      if(i !== 0) {
+        text += " ";
+      }
+      text += pizza.toppings[i];
     }
-    text + ") ";
+    text += ") "
   }
   text += "$" + pizza.calculateCost().toFixed(2);
 
@@ -145,18 +148,10 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function updateTopping() {
-    let costNode = this.parentNode.nextElementSibling;
-
     if(this.checked) {
       pizza.addTopping(this.value);
-      if(costNode) {
-        costNode.innerHTML = "BOO!";
-      }
     } else {
       pizza.removeTopping(this.value);
-      if(costNode) {
-        costNode.innerHTML = "";
-      }
     }
     updateTotal();
   }
