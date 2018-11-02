@@ -116,6 +116,7 @@ function getOrderSummary(pizza) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+  let baseCost = document.getElementById("base-cost");
   let orderForm = document.getElementById("order-form");
   let orderGrid = document.getElementById("order-grid");
   let orderSize = document.getElementById("order-size");
@@ -124,9 +125,23 @@ document.addEventListener("DOMContentLoaded", function() {
   let summarySection = document.getElementById("summary-section");
 
 
+  function updateBaseCost() {
+    const cost = pizza.calculateBaseCost(pizza.size);
+    baseCost.innerHTML = "$" + cost.toFixed(2);
+  }
+
   function updateTotal() {
-    let cost = pizza.calculateCost();
+    const cost = pizza.calculateCost();
     orderCost.innerHTML = "$" + cost.toFixed(2);
+  }
+
+  function updateSize() {
+    const sizeName = this.options[this.selectedIndex].value;
+    const size = pizza.getSizeByName(sizeName);
+    pizza.setSize(size);
+
+    updateBaseCost();
+    updateTotal();
   }
 
   function updateTopping() {
@@ -138,12 +153,8 @@ document.addEventListener("DOMContentLoaded", function() {
     updateTotal();
   }
 
-  orderSize.onchange = function() {
-    let sizeName = this.options[this.selectedIndex].value;
-    let size = pizza.getSizeByName(sizeName);
-    pizza.setSize(size);
-    updateTotal();
-  };
+
+  orderSize.onchange = updateSize;
 
   let toppings = document.querySelectorAll(".topping input");
   toppings.forEach(function(topping) {
@@ -152,37 +163,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   orderForm.onsubmit = function(event) {
     event.preventDefault();
-    let sizeName = orderSize.options[orderSize.selectedIndex].value;
-    let size = pizza.getSizeByName(sizeName);
-    pizza.setSize(size);
-
-    //??? get toppings
-    updateTotal();
-
     let summary = getOrderSummary(pizza);
     orderSummary.innerHTML = summary;
     summarySection.style.display = "block";
   };
 
+  updateBaseCost();
   updateTotal();
 });
-
-/*
-let pizza = new Pizza();
-pizza.setSize(12);
-getOrderSummary(pizza);
-
-pizza.addTopping("Olives");
-getOrderSummary(pizza);
-
-pizza.addTopping("Pepperoni");
-pizza.addTopping("Pepperoncini");
-pizza.addTopping("Roasted Red Peppers");
-getOrderSummary(pizza);
-
-pizza.removeTopping("Olives");
-getOrderSummary(pizza);
-
-pizza.addTopping("Pepperoncini");
-getOrderSummary(pizza);
-*/
