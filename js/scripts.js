@@ -38,20 +38,26 @@ Pizza.prototype.removeTopping = function(topping) {
 }
 
 Pizza.prototype.calculateBaseCost = function(size) {
+  const costPerSquareInch = 0.12;
+
   const radius = (size / 2);
   const area = Math.PI * radius * radius;
-  const costPerSquareInch = 0.12;
   const cost = Math.floor(costPerSquareInch * area);
 
   return cost;
 }
 
-Pizza.prototype.getToppingCost = function(isPremium) {
-  const basicCost = 1.0;
+Pizza.prototype.getToppingCost = function(size, isPremium) {
+  const basicCostPerSquareInch = 0.0095;
   const premiumRatio = 1.5;
 
+  const radius = (size / 2);
+  const area = Math.PI * radius * radius;
+  const toFiveCents = 20;
+  const basicCost = Math.round(toFiveCents * basicCostPerSquareInch * area) / toFiveCents;
+
   if(isPremium) {
-    return premiumRatio * basicCost;
+    return (Math.round(toFiveCents * premiumRatio * basicCost) / toFiveCents);
   } else {
     return basicCost;
   }
@@ -59,8 +65,8 @@ Pizza.prototype.getToppingCost = function(isPremium) {
 
 Pizza.prototype.calculateToppingsCost = function(toppings) {
   const premiums = this.getPremiumToppings();
-  const basicCost = this.getToppingCost(false);
-  const premiumCost = this.getToppingCost(true);
+  const basicCost = this.getToppingCost(this.size, false);
+  const premiumCost = this.getToppingCost(this.size, true);
   let cost = 0;
 
   toppings.forEach(function(topping) {

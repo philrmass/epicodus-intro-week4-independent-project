@@ -39,10 +39,14 @@ The following expectations were used to hand-test the project
 - [x] add ability to remove toppings
  * removeTopping("Olives") removes "Olives" from toppings array if present
 - [x] add two topping categories and create arrays of names as methods
+ * getPremiumToppings -> ["Bacon", "Chicken", "Pepperoni", "Sausge"]
 - [x] add individual topping cost method
+ * getToppingCost() -> 1
 - [x] improve toppings cost to include topping category
-- [ ] improve toppings cost to account for size of pizza
-- [ ]
+ * getToppingCost(true) -> 1.5
+- [x] improve toppings cost to account for size of pizza
+ * getToppingCost(12, true) -> 1.6
+- [ ] 
 
 
 ## Objectives
